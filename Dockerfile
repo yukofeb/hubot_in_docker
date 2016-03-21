@@ -20,9 +20,9 @@ WORKDIR /home/hubot
 Run yo hubot --owner="yukofeb" --name="Hubot" --description="Hubot in docker" --defaults
 
 # Configure
-ADD $HOME/$CIRCLE_PROJECT_REPONAME/files/external-scripts.json /home/hubot/ 
-ADD $HOME/$CIRCLE_PROJECT_REPONAME/scripts/*.coffee /home/hubot/scripts/
+#ADD $HOME/$CIRCLE_PROJECT_REPONAME/files/external-scripts.json /home/hubot/ 
+#ADD $HOME/$CIRCLE_PROJECT_REPONAME/scripts/*.coffee /home/hubot/scripts/
 
 # Support slack
-RUN npm install hubot-slack --save && npm install
-CMD bin/hubot -a slack
+#RUN npm install hubot-slack --save && npm install
+#CMD bin/hubot -a slack
