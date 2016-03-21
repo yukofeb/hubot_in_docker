@@ -20,7 +20,7 @@ WORKDIR /home/hubot
 Run yo hubot --owner="yukofeb" --name="Hubot" --description="Hubot in docker" --defaults
 
 # Configure
-COPY files/external-scripts.json .
+ADD files/external-scripts.json .
 ADD scripts/*.coffee scripts/
 
 # Support slack
