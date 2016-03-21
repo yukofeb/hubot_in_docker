@@ -10,11 +10,11 @@ RUN npm install -g coffee-script
 RUN npm install -g yo generator-hubot
 
 # Create hubot user
-RUN useradd -d /hubot -m -s /bin/bash -U hubot
+RUN useradd -d /home/hubot -m -s /bin/bash -U hubot
 
 # Log in as hubot user
 USER hubot
-WORKDIR /hubot
+WORKDIR /home/hubot
 
 # Install hubot
 Run yo hubot --owner="yukofeb" --name="Hubot" --description="Hubot in docker" --defaults

@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-          - docker build -t yukofeb/hubot_in_docker:v_$CIRCLE_BUILD_NUM .
+    - docker build -t yukofeb/hubot_in_docker:v_$CIRCLE_BUILD_NUM .
 
 test:
   override:
