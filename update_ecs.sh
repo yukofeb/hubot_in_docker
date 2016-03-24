@@ -8,7 +8,8 @@
 
 REPLACED_FILE=replaced_ecs_task_definition.json
 MYSECURITYGROUP=sg-34fc6d51
-MYIP=`curl -s inet-ip.info`
+#MYIP=`curl -s inet-ip.info`
+MYIP=`curl -s ifconfig.me`
 echo "MYIP is $MYIP"
 
 # Replace variables
