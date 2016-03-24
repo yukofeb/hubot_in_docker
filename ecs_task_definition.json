@@ -1,0 +1,24 @@
+[
+  {
+    "image": "yukofeb/hubot_in_docker:v_10",
+    "name": "myhubot",
+    "cpu": 10,
+    "memory": 400,
+    "essential": true,
+    "entryPoint": [
+      "bin/hubot",
+      "-a",
+      "slack",
+      "-d"
+    ],
+    "environment": [
+      { "name" : "HUBOT_SLACK_TOKEN", "value" : "__HUBOT_SLACK_TOKEN__" }
+    ],
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 80
+      }
+    ]
+  }
+]
