@@ -1,6 +1,6 @@
 [
   {
-    "image": "yukofeb/hubot_in_docker:v_10",
+    "image": "yukofeb/hubot_in_docker:v_${CIRCLE_BUILD_NUM}",
     "name": "myhubot",
     "cpu": 10,
     "memory": 400,
