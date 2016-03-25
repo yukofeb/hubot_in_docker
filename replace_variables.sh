@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Replace _***_ with $***(environment variables)
+ORIGINAL_FILE=$1
 REPLACED_FILE=$2
 
-cp $1 ./$REPLACED_FILE
+cp ./$ORIGINAL_FILE ./$REPLACED_FILE
 cat $REPLACED_FILE | while read line
 do
   if [[ $line =~ __([A-Z_]+)__ ]] ; then

@@ -25,7 +25,8 @@ aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol 
 
 aws ecs list-container-instances --cluster hubot
 result=`aws ecs register-task-definition --family myhubot --container-definitions file://./$REPLACED_FILE`
-revision=`echo $result | sed -e "s/^.*\"revision\": \([0-9]*\) \}.*/\1/g"` >/dev/null 2>&1
+#revision=`echo $result | sed -e "s/^.*\"revision\": \([0-9]*\) \}.*/\1/g"` >/dev/null 2>&1
+revision=`echo $result | jq '.["taskDefinition"]["revision"]'`
 echo $revision
 aws ecs update-service --cluster hubot --service hubot --task-definition myhubot:$revision --desired-count 1
 

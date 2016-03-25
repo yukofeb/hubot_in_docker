@@ -4,6 +4,7 @@ machine:
 
 dependencies:
   pre:
+    - sudo apt-get install jq
     - sudo pip install awscli
   override:
     - docker build -t yukofeb/hubot_in_docker:v_$CIRCLE_BUILD_NUM .
