@@ -14,7 +14,7 @@ echo "MYIP is $MYIP"
 
 # Replace variables
 bash ./replace_variables.sh ecs_task_definition.json $REPLACED_FILE
-sed -e "s/\${CIRCLE_BUILD_NUM}/$1/g" $REPLACED_FILE
+sed -i -e "s/\${CIRCLE_BUILD_NUM}/$1/g" $REPLACED_FILE
 
 # Set aws config
 aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
@@ -23,11 +23,9 @@ aws configure set region $AWS_REGION
 
 aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
 
-aws ecs list-container-instances --cluster hubot
-result=`aws ecs register-task-definition --family myhubot --container-definitions file://./$REPLACED_FILE`
-#revision=`echo $result | sed -e "s/^.*\"revision\": \([0-9]*\) \}.*/\1/g"` >/dev/null 2>&1
+result=`aws ecs register-task-definition --family myhubot --container-definitions file://./$REPLACED_FILE` >/dev/null 2>&1
+echo $result
 revision=`echo $result | jq '.["taskDefinition"]["revision"]'`
-echo $revision
 aws ecs update-service --cluster hubot --service hubot --task-definition myhubot:$revision --desired-count 1
 
 aws ec2 revoke-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
