@@ -24,7 +24,6 @@ aws configure set region $AWS_REGION
 aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
 
 result=`aws ecs register-task-definition --family myhubot --container-definitions file://./$REPLACED_FILE` >/dev/null 2>&1
-echo $result
 revision=`echo $result | jq '.["taskDefinition"]["revision"]'`
 aws ecs update-service --cluster hubot --service hubot --task-definition myhubot:$revision --desired-count 1
 
