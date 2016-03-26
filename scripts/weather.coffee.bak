@@ -17,15 +17,16 @@ module.exports = (robot) ->
     # city
     city = "Atlanta"
     nation = "US"
+    appid = ""
 
-    robot.http("http://api.openweathermap.org/data/2.5/weather?units=metric&q=#{city},#{nation}")
+    robot.http("http://api.openweathermap.org/data/2.5/weather?units=metric&q=#{city},#{nation}&APPID=#{appid}")
       .get() (err, res, body) ->
         data = JSON.parse body
         envelope = room: "general"
-        robot.send envelope, "【天気予報】(#{year}/#{month}/#{date})\n今日の天気は#{data.weather[0].main}(#{data.weather[0].description})。\n気温は#{data.main.temp}度(最高#{data.main.temp_max}度、最低#{data.main.temp_min}度)。"
+        robot.send envelope, "【Today's Weather Forecast】(#{year}/#{month}/#{date})\nToday's weather is #{data.weather[0].main}.(#{data.weather[0].description})\nTemperature is #{data.main.temp} c((Maximum: #{data.main.temp_max}c, Minimum: #{data.main.temp_min}c)"
   
   weathercron = new cronJob(
-    cronTime: "00 00 06 * * *"
+    cronTime: "00 00 * * * *"
     onTick: ->
       informWeather()
     start: true
