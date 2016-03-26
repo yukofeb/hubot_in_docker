@@ -1,6 +1,6 @@
 [
   {
-    "image": "yukofeb/hubot_in_docker:v_${CIRCLE_BUILD_NUM}",
+    "image": "yukofeb/hubot_in_docker:v_--CIRCLE_BUILD_NUM--",
     "name": "myhubot",
     "cpu": 10,
     "memory": 400,
@@ -12,7 +12,7 @@
       "-d"
     ],
     "environment": [
-      { "name" : "HUBOT_SLACK_TOKEN", "value" : "__HUBOT_SLACK_TOKEN__" }
+      { "name" : "HUBOT_SLACK_TOKEN", "value" : "--HUBOT_SLACK_TOKEN--" }
     ],
     "portMappings": [
       {
