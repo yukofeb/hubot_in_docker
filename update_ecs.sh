@@ -14,7 +14,6 @@ echo "MYIP is $MYIP"
 
 # Replace variables
 bash ./replace_variables.sh ecs_task_definition.json $REPLACED_FILE
-#sed -i -e "s/\${CIRCLE_BUILD_NUM}/$1/g" $REPLACED_FILE
 
 # Set aws config
 aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
