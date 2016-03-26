@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Some environment variables required
-# HUBOT_SLACK_TOKEN
-# AWS_ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY
-# AWS_REGION
-
 REPLACED_FILE=replaced_ecs_task_definition.json
 MYSECURITYGROUP=sg-34fc6d51
 #MYIP=`curl -s inet-ip.info`
