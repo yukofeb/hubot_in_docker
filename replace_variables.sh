@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Replace --***-- with $***(environment variables)
+# Thanks to : https://github.com/noboru-i/backlog-to-chatwork/blob/master/bin/env2file
 ORIGINAL_FILE=$1
 REPLACED_FILE=$2
 
