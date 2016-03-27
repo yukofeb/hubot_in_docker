@@ -24,5 +24,5 @@ ADD files/external-scripts.json ./
 ADD scripts/*.coffee scripts/
 
 # Support slack
-RUN npm install hubot-slack --save && npm install
+RUN npm install hubot-slack cron time --save && npm install
 CMD bin/hubot -a slack
