@@ -21,4 +21,5 @@ DOCKER_EMAIL : dockerhubのemail
 DOCKER_PASS : dockerhubのパスワード
 DOCKER_USER : dockerhubのユーザー名
 HUBOT_SLACK_TOKEN : SlackとHubotを連携するためのトークン(Slack Integration設定画面から取得可能)
+HUBOT_WEATHER_APPID : [OpenWeatherMap](http://openweathermap.org/api)のAppID
 ```
