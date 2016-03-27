@@ -12,7 +12,8 @@
       "-d"
     ],
     "environment": [
-      { "name" : "HUBOT_SLACK_TOKEN", "value" : "--HUBOT_SLACK_TOKEN--" }
+      { "name" : "HUBOT_SLACK_TOKEN", "value" : "--HUBOT_SLACK_TOKEN--" },
+      { "name" : "HUBOT_WEATHER_APPID", "value" : "--HUBOT_WEATHER_APPID--" }
     ],
     "portMappings": [
       {

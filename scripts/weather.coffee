@@ -28,7 +28,7 @@ module.exports = (robot) ->
         robot.send envelope, "【Today's Weather Forecast】(#{year}/#{month}/#{date})\nToday's weather is #{data.weather[0].main}(#{data.weather[0].description}).\nTemperature is #{data.main.temp} ℃.\n((Maximum: #{data.main.temp_max}℃, Minimum: #{data.main.temp_min}℃)\nhttp://openweathermap.org/img/w/#{data.weather[0].icon}.png"
   
   weathercron = new cronJob(
-    cronTime: "00 00 06 * * *"
+    cronTime: "00 * * * * *"
     onTick: ->
       informWeather()
     start: true
