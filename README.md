@@ -4,9 +4,12 @@ Amazon ECSを利用して、Hubotが動いているdockerコンテナをEC2に�
 ## How to use
 [Amazon ECSを使ってhubotが動いているdockerコンテナをEC2へ自動デプロイする - yukofebの日記](http://yukofeb.hatenablog.com/entry/2016/03/26/120732)  
 
-## Links
+## Tools
 [CircleCI](https://circleci.com/gh/yukofeb/hubot_in_docker)  
 [dockerhub](https://hub.docker.com/r/yukofeb/hubot_in_docker/)  
+
+## References
+[Weather API](http://openweathermap.org/api)  
 
 ## Memo
 
