@@ -22,6 +22,7 @@ Run yo hubot --owner="yukofeb" --name="Hubot" --description="Hubot in docker" --
 # Configure
 ADD files/external-scripts.json ./ 
 ADD scripts/*.coffee scripts/
+ADD scripts/*.json scripts/
 
 # Support slack
 RUN npm install hubot-slack cron time --save && npm install
