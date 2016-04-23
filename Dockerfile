@@ -8,6 +8,7 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm install -g coffee-script
 RUN npm install -g yo generator-hubot
+RUN npm install -g forever
 
 # Create hubot user
 RUN useradd -d /hubot -m -s /bin/bash -U hubot
@@ -26,4 +27,5 @@ ADD scripts/*.json scripts/
 
 # Support slack
 RUN npm install hubot-slack cron time --save && npm install
-CMD bin/hubot -a slack
+#CMD bin/hubot -a slack
+CMD forever start -w -c coffee bin/hubot -a slack
